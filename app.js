@@ -488,13 +488,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // 3. Name & Bio
     cardName.textContent = factObj.name;
-    cardBio.textContent = factObj.field;
+    cardBio.textContent = `Pioneer in the field of ${factObj.field}`;
     
     // 4. Fact text body
+    const fieldPrefix = `Pioneering in the field of ${factObj.field}, `;
+    const cleanFact = factObj.fact.charAt(0).toLowerCase() + factObj.fact.slice(1);
+    const fullFactText = `${fieldPrefix}${cleanFact}`;
+
     if (missingQuery) {
-      cardFact.innerHTML = `<strong style="color: var(--pink)">Not Found:</strong> I couldn't find a direct record matching "${missingQuery}". Displaying default database record:<br><br>${factObj.fact}`;
+      cardFact.innerHTML = `<strong style="color: var(--pink)">Not Found:</strong> I couldn't find a direct record matching "${missingQuery}". Displaying default database record:<br><br>${fullFactText}`;
     } else {
-      cardFact.textContent = factObj.fact;
+      cardFact.textContent = fullFactText;
     }
     
     // 5. Blockquote
