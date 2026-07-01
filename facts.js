@@ -1,0 +1,470 @@
+/**
+ * STEMinism Aura - Facts Database
+ * A curated dataset of 42 pioneering women in STEM.
+ * Declared as a global constant for out-of-the-box browser execution.
+ */
+
+const STEM_FACTS = [
+  {
+    id: "ada-lovelace",
+    name: "Ada Lovelace",
+    lifespan: "1815 – 1852",
+    field: "Computer Science",
+    fieldIcon: "code",
+    fact: "She wrote the world's first computer algorithm for Charles Babbage's mechanical computer, the Analytical Engine. Crucially, she was the first to realize that computers could do more than just compute numbers—foreseeing that they could create music, art, and complex graphics if programmed correctly.",
+    quote: "That brain of mine is something more than merely mortal; as time will show.",
+    tags: ["programming", "computer science", "math", "algorithm", "software", "coding", "lovelace", "ada", "first", "pioneer"],
+    wikipedia: "https://en.wikipedia.org/wiki/Ada_Lovelace"
+  },
+  {
+    id: "marie-curie",
+    name: "Marie Curie",
+    lifespan: "1867 – 1934",
+    field: "Physics & Chemistry",
+    fieldIcon: "atom",
+    fact: "She is the only person in history to win Nobel Prizes in two different scientific fields (Physics in 1903 and Chemistry in 1911). She discovered two radioactive elements, polonium and radium. Her research papers are still so radioactive today that they must be kept in lead-lined boxes and handled with protective gear.",
+    quote: "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
+    tags: ["physics", "chemistry", "radioactivity", "nobel", "curie", "marie", "polonium", "radium", "elements"],
+    wikipedia: "https://en.wikipedia.org/wiki/Marie_Curie"
+  },
+  {
+    id: "grace-hopper",
+    name: "Grace Hopper",
+    lifespan: "1906 – 1992",
+    field: "Software Engineering",
+    fieldIcon: "code",
+    fact: "A US Navy Rear Admiral and computer pioneer, she developed the first compiler (A-0 System), which translated code into machine language and paved the way for COBOL, one of the first high-level programming languages. She also popularized the term 'debugging' after finding a physical moth stuck inside the Harvard Mark II computer.",
+    quote: "The most damaging phrase in the language is, 'It's always been done this way.'",
+    tags: ["computer science", "compiler", "debugging", "programming", "software", "navy", "cobol", "grace", "hopper", "bug"],
+    wikipedia: "https://en.wikipedia.org/wiki/Grace_Hooper"
+  },
+  {
+    id: "hedy-lamarr",
+    name: "Hedy Lamarr",
+    lifespan: "1914 – 2000",
+    field: "Telecommunications & Invention",
+    fieldIcon: "rocket",
+    fact: "While widely celebrated as a glamorous Hollywood actress, she co-invented a secret communication system during WWII to prevent radio-guided torpedoes from being jammed. This 'frequency hopping' technology laid the scientific foundation for modern Wi-Fi, Bluetooth, and GPS.",
+    quote: "Hope and curiosity about the future seemed better than guarantees.",
+    tags: ["invention", "wifi", "bluetooth", "gps", "telecommunications", "frequency hopping", "hollywood", "hedy", "lamarr", "actress"],
+    wikipedia: "https://en.wikipedia.org/wiki/Hedy_Lamarr"
+  },
+  {
+    id: "katherine-johnson",
+    name: "Katherine Johnson",
+    lifespan: "1918 – 2020",
+    field: "Mathematics & Space",
+    fieldIcon: "rocket",
+    fact: "Known as a human computer at NASA, she manually calculated the flight path for Alan Shepard's first spaceflight and the Apollo 11 moon landing. Her calculations were so accurate that astronaut John Glenn personally refused to launch the Friendship 7 orbital mission until she double-checked the electronic computer's math by hand.",
+    quote: "Like what you do, and then you will do your best.",
+    tags: ["math", "space", "nasa", "apollo", "orbit", "katherine", "johnson", "hidden figures", "moon", "calculation"],
+    wikipedia: "https://en.wikipedia.org/wiki/Katherine_Johnson"
+  },
+  {
+    id: "rosalind-franklin",
+    name: "Rosalind Franklin",
+    lifespan: "1920 – 1958",
+    field: "Biophysics",
+    fieldIcon: "dna",
+    fact: "She captured 'Photo 51', a highly detailed X-ray diffraction image that revealed the double-helix structure of DNA. Her work was shown to Watson and Crick without her knowledge or permission, leading to their Nobel Prize, which she was tragically excluded from after her early death.",
+    quote: "Science and everyday life cannot and should not be separated.",
+    tags: ["biology", "dna", "chemistry", "biophysics", "photo 51", "rosalind", "franklin", "genetics", "double helix"],
+    wikipedia: "https://en.wikipedia.org/wiki/Rosalind_Franklin"
+  },
+  {
+    id: "chien-shiung-wu",
+    name: "Chien-Shiung Wu",
+    lifespan: "1912 – 1997",
+    field: "Nuclear Physics",
+    fieldIcon: "atom",
+    fact: "Often called the 'First Lady of Physics', she designed and conducted the Wu Experiment, which disproved the law of conservation of parity (a fundamental assumption of physics). Though her experiment revolutionized physics, her male colleagues Tsung-Dao Lee and Chen-Ning Yang received the 1957 Nobel Prize for the theory, while she was overlooked.",
+    quote: "There is only one thing worse than coming home from a lab to find your experiment has failed; it is to find that your experiment has succeeded, but someone else has published it.",
+    tags: ["physics", "parity", "nuclear", "wu", "experiment", "china", "manhattan project", "overlooked"],
+    wikipedia: "https://en.wikipedia.org/wiki/Chien-Shiung_Wu"
+  },
+  {
+    id: "dorothy-vaughan",
+    name: "Dorothy Vaughan",
+    lifespan: "1910 – 2008",
+    field: "Mathematics & Programming",
+    fieldIcon: "code",
+    fact: "She was NASA's first Black supervisor. Anticipating that electronic IBM mainframe computers would soon replace human calculators, she taught herself and her entire staff the Fortran programming language, making them indispensable pioneers in the transition to digital programming.",
+    quote: "I changed what I could, and what I couldn't, I endured.",
+    tags: ["math", "programming", "nasa", "fortran", "dorothy", "vaughan", "hidden figures", "supervisor", "computer"],
+    wikipedia: "https://en.wikipedia.org/wiki/Dorothy_Vaughan"
+  },
+  {
+    id: "mary-jackson",
+    name: "Mary Jackson",
+    lifespan: "1921 – 2005",
+    field: "Aerospace Engineering",
+    fieldIcon: "rocket",
+    fact: "She became NASA's first Black female engineer. To earn the promotion, she had to take graduate-level math and physics courses at a segregated, all-white high school, which required her to successfully petition the city court of Hampton for special permission to enter the building.",
+    quote: "We have to do something like this, and we have to do it yesterday.",
+    tags: ["engineering", "aerospace", "nasa", "mary", "jackson", "hidden figures", "wind tunnel", "spaceflight"],
+    wikipedia: "https://en.wikipedia.org/wiki/Mary_Jackson_(engineer)"
+  },
+  {
+    id: "barbara-mcclintock",
+    name: "Barbara McClintock",
+    lifespan: "1902 – 1992",
+    field: "Genetics & Botany",
+    fieldIcon: "dna",
+    fact: "She discovered genetic transposition—the ability of DNA sequences (commonly called 'jumping genes') to change positions within a genome. The scientific community initially dismissed her findings for decades before realizing it explained key processes in evolution, medicine, and genetics. She won the Nobel Prize in 1983.",
+    quote: "If you know you are on the right track, if you have this inner knowledge, then nobody can turn you off... no matter what they say.",
+    tags: ["genetics", "biology", "dna", "jumping genes", "nobel", "barbara", "mcclintock", "botany", "corn"],
+    wikipedia: "https://en.wikipedia.org/wiki/Barbara_McClintock"
+  },
+  {
+    id: "jane-goodall",
+    name: "Jane Goodall",
+    lifespan: "1934 – Present",
+    field: "Primatology & Ethology",
+    fieldIcon: "dna",
+    fact: "By embedding herself among wild chimpanzees in Tanzania, she made the groundbreaking discovery that chimpanzees make and use tools (previously thought to be a uniquely human trait). She also discovered they have complex social hierarchies, express emotions, and engage in warfare.",
+    quote: "What you do makes a difference, and you have to decide what kind of difference you want to make.",
+    tags: ["biology", "chimpanzees", "primatology", "conservation", "environment", "jane", "goodall", "tools", "animal"],
+    wikipedia: "https://en.wikipedia.org/wiki/Jane_Goodall"
+  },
+  {
+    id: "tu-youyou",
+    name: "Tu Youyou",
+    lifespan: "1930 – Present",
+    field: "Pharmacology & Chemistry",
+    fieldIcon: "dna",
+    fact: "Faced with a deadly drug-resistant strain of malaria during the Vietnam War, she turned to ancient Chinese herbal texts from 1,600 years ago. She successfully isolated artemisinin, a compound that became a breakthrough malaria treatment. She volunteered to be the first human subject to test its safety.",
+    quote: "Every scientist dreams of doing something that can help the world.",
+    tags: ["medicine", "malaria", "chemistry", "chinese", "artemisinin", "tu", "youyou", "nobel", "pharmacology"],
+    wikipedia: "https://en.wikipedia.org/wiki/Tu_Youyou"
+  },
+  {
+    id: "mae-jemison",
+    name: "Mae Jemison",
+    lifespan: "1956 – Present",
+    field: "Medicine & Aerospace",
+    fieldIcon: "rocket",
+    fact: "Before becoming the first Black woman in space aboard the Space Shuttle Endeavour in 1992, she earned a medical degree and served as a Peace Corps medical officer in Sierra Leone and Liberia. She is also a trained dancer and was the first real astronaut to appear on Star Trek: The Next Generation.",
+    quote: "Don't let anyone rob you of your imagination, your creativity, or your curiosity.",
+    tags: ["space", "astronaut", "nasa", "medicine", "mae", "jemison", "star trek", "dance", "endeavour"],
+    wikipedia: "https://en.wikipedia.org/wiki/Mae_Jemison"
+  },
+  {
+    id: "gladys-west",
+    name: "Gladys West",
+    lifespan: "1930 – Present",
+    field: "Mathematics & Geodesy",
+    fieldIcon: "math",
+    fact: "She analyzed satellite data at the Naval Proving Ground and developed an incredibly precise mathematical model of the Earth's irregular shape (the geoid). This complex computer simulation served as the mathematical foundation for the Global Positioning System (GPS).",
+    quote: "When you're working, you're not thinking about, 'What is this going to turn into?' You're thinking, 'I need to get this right.'",
+    tags: ["math", "gps", "geodesy", "gladys", "west", "satellite", "programming", "navy"],
+    wikipedia: "https://en.wikipedia.org/wiki/Gladys_West"
+  },
+  {
+    id: "margaret-hamilton",
+    name: "Margaret Hamilton",
+    lifespan: "1936 – Present",
+    field: "Software Engineering",
+    fieldIcon: "code",
+    fact: "She led the MIT team that developed the on-board flight software for NASA's Apollo space program. Just minutes before Apollo 11 touched down on the Moon, a radar overload threatened to crash the system. Her software successfully prioritized critical landing functions, preventing an abort and saving the mission.",
+    quote: "There was no choice but to be pioneers.",
+    tags: ["software", "programming", "computer science", "nasa", "apollo", "apollo 11", "margaret", "hamilton", "moon", "code"],
+    wikipedia: "https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)"
+  },
+  {
+    id: "annie-easley",
+    name: "Annie Easley",
+    lifespan: "1933 – 2011",
+    field: "Computer Science & Mathematics",
+    fieldIcon: "code",
+    fact: "She started at NASA as a human computer and transitioned into computer programming. She developed the code for the Centaur high-energy rocket stage, which was later used to launch the Cassini probe to Saturn. She was also an advocate for civil rights, helping neighbors pass literacy tests to vote.",
+    quote: "If I can't work with you, I will work around you.",
+    tags: ["computer science", "math", "nasa", "rocket", "centaur", "annie", "easley", "fortran", "space"],
+    wikipedia: "https://en.wikipedia.org/wiki/Annie_Easley"
+  },
+  {
+    id: "mary-golda-ross",
+    name: "Mary Golda Ross",
+    lifespan: "1908 – 2008",
+    field: "Aerospace Engineering",
+    fieldIcon: "rocket",
+    fact: "The first Native American female engineer (Cherokee Nation). She was one of the 40 founding engineers of Lockheed's top-secret Skunk Works division. Her work included drafting the design criteria for the Agena rocket and outlining early flight paths for interplanetary missions to Mars and Venus.",
+    quote: "I was just doing what came naturally, following my love for math.",
+    tags: ["engineering", "rocket", "skunk works", "cherokee", "native american", "space", "mary", "ross", "planets"],
+    wikipedia: "https://en.wikipedia.org/wiki/Mary_G._Ross"
+  },
+  {
+    id: "shirley-ann-jackson",
+    name: "Shirley Ann Jackson",
+    lifespan: "1946 – Present",
+    field: "Theoretical Physics",
+    fieldIcon: "atom",
+    fact: "The first African American woman to earn a Ph.D. from MIT, she conducted groundbreaking research in theoretical physics at Bell Labs. Her studies of subatomic particles laid the foundational science that enabled other engineers to invent caller ID, touch-tone phones, solar cells, and fiber-optic cables.",
+    quote: "The only limit to your impact is your imagination and commitment.",
+    tags: ["physics", "bell labs", "mit", "telecommunications", "caller id", "shirley", "jackson", "electronics"],
+    wikipedia: "https://en.wikipedia.org/wiki/Shirley_Ann_Jackson"
+  },
+  {
+    id: "jocelyn-bell-burnell",
+    name: "Jocelyn Bell Burnell",
+    lifespan: "1943 – Present",
+    field: "Astrophysics",
+    fieldIcon: "rocket",
+    fact: "As a postgraduate student, she detected a strange, regular pulsing radio signal in space, which she initially labeled LGM-1 ('Little Green Men'). She had discovered pulsars (rapidly spinning neutron stars). While she was excluded from the Nobel Prize awarded to her thesis advisor, she later received the $3M Breakthrough Prize and donated the money to help underrepresented students study physics.",
+    quote: "We are all made of starstuff.",
+    tags: ["astrophysics", "pulsars", "stars", "jocelyn", "bell", "burnell", "telescope", "radio astronomy", "overlooked"],
+    wikipedia: "https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell"
+  },
+  {
+    id: "lise-meitner",
+    name: "Lise Meitner",
+    lifespan: "1878 – 1968",
+    field: "Nuclear Physics",
+    fieldIcon: "atom",
+    fact: "Working in Berlin and later in exile, she co-discovered nuclear fission (the splitting of atomic nuclei). Albert Einstein referred to her as the 'German Marie Curie'. Her collaborator Otto Hahn alone received the Nobel Prize for the discovery, but element 109, Meitnerium, was named in her honor.",
+    quote: "Science makes people reach selflessly for truth and objectivity.",
+    tags: ["physics", "nuclear", "fission", "lise", "meitner", "meitnerium", "atomic", "overlooked"],
+    wikipedia: "https://en.wikipedia.org/wiki/Lise_Meitner"
+  },
+  {
+    id: "emmy-noether",
+    name: "Emmy Noether",
+    lifespan: "1882 – 1935",
+    field: "Mathematics & Physics",
+    fieldIcon: "math",
+    fact: "Described by Einstein as the most significant creative mathematical genius since the higher education of women began. She proved 'Noether's Theorem', which connects symmetries in nature (like rotation or translation) to the laws of physical conservation (like energy or momentum), forming a cornerstone of modern physics.",
+    quote: "My methods are really methods of working and thinking; this is why they have crept in everywhere anonymously.",
+    tags: ["math", "symmetry", "physics", "noether", "emmy", "algebra", "conservation"],
+    wikipedia: "https://en.wikipedia.org/wiki/Emmy_Noether"
+  },
+  {
+    id: "rachel-carson",
+    name: "Rachel Carson",
+    lifespan: "1907 – 1964",
+    field: "Marine Biology & Ecology",
+    fieldIcon: "dna",
+    fact: "Her landmark book 'Silent Spring' exposed the devastating environmental effects of chemical pesticides, particularly DDT, on wildlife and human health. Despite aggressive attacks from the chemical industry, her work led to a nationwide ban on DDT and inspired the creation of the US Environmental Protection Agency (EPA).",
+    quote: "In nature, nothing exists alone.",
+    tags: ["ecology", "biology", "environment", "silent spring", "rachel", "carson", "pesticides", "conservation"],
+    wikipedia: "https://en.wikipedia.org/wiki/Rachel_Carson"
+  },
+  {
+    id: "sally-ride",
+    name: "Sally Ride",
+    lifespan: "1951 – 2012",
+    field: "Astrophysics & Space",
+    fieldIcon: "rocket",
+    fact: "She became the first American woman in space in 1983 aboard the Space Shuttle Challenger. During press conferences, she was asked patronizing questions like 'Do you cry when things go wrong?' and 'Will the flight affect your organs?' She handled them with grace and later founded Sally Ride Science to encourage girls in STEM.",
+    quote: "I did not feel pressure. I was just focused on doing the job well.",
+    tags: ["space", "astronaut", "nasa", "astrophysics", "sally", "ride", "challenger", "first"],
+    wikipedia: "https://en.wikipedia.org/wiki/Sally_Ride"
+  },
+  {
+    id: "alice-ball",
+    name: "Alice Ball",
+    lifespan: "1892 – 1916",
+    field: "Chemistry",
+    fieldIcon: "atom",
+    fact: "At age 23, she developed the 'Ball Method', the first highly effective injectable treatment for leprosy using chaulmoogra oil. She died tragically young, and the president of her college claimed credit for her work. It wasn't until decades later that her journals were found, restoring her legacy as the true inventor.",
+    quote: "I found a way to make the oil soluble.",
+    tags: ["chemistry", "medicine", "leprosy", "alice", "ball", "hawaii", "treatment", "overlooked"],
+    wikipedia: "https://en.wikipedia.org/wiki/Alice_Ball"
+  },
+  {
+    id: "gerty-cori",
+    name: "Gerty Cori",
+    lifespan: "1896 – 1957",
+    field: "Biochemistry",
+    fieldIcon: "dna",
+    fact: "She was the first American woman to win a Nobel Prize in Science. She discovered the 'Cori Cycle', which explains how glycogen in muscles is converted into lactic acid, transported to the liver, and turned back into glucose for energy. This was a massive breakthrough for understanding diabetes.",
+    quote: "The love for and dedication to one's work are the secrets of all achievements.",
+    tags: ["biochemistry", "nobel", "cori cycle", "glycogen", "gerty", "cori", "glucose", "diabetes"],
+    wikipedia: "https://en.wikipedia.org/wiki/Gerty_Cori"
+  },
+  {
+    id: "elizabeth-blackwell",
+    name: "Elizabeth Blackwell",
+    lifespan: "1821 – 1910",
+    field: "Medicine",
+    fieldIcon: "dna",
+    fact: "The first woman to receive a medical degree in the United States. She was accepted to Geneva Medical College because the faculty, reluctant to make the decision themselves, submitted the application to a student vote. The all-male student body voted 'yes' unanimously, thinking it was a hilarious practical joke.",
+    quote: "If society will not admit of woman's free development, then society must be remodeled.",
+    tags: ["medicine", "doctor", "elizabeth", "blackwell", "medical school", "first", "health"],
+    wikipedia: "https://en.wikipedia.org/wiki/Elizabeth_Blackwell"
+  },
+  {
+    id: "flossie-wong-staal",
+    name: "Flossie Wong-Staal",
+    lifespan: "1946 – 2020",
+    field: "Virology & Molecular Biology",
+    fieldIcon: "dna",
+    fact: "She was the first scientist to clone HIV and map its genetic structure. Her genetic map allowed other researchers to prove that HIV is the cause of AIDS. It also enabled the development of diagnostic blood screening tests and the design of effective cocktail therapies to treat the disease.",
+    quote: "It is a race against time, and we must do everything we can to win it.",
+    tags: ["biology", "virology", "hiv", "aids", "cloning", "dna", "flossie", "wong-staal", "medicine"],
+    wikipedia: "https://en.wikipedia.org/wiki/Flossie_Wong-Staal"
+  },
+  {
+    id: "sau-lan-wu",
+    name: "Sau Lan Wu",
+    lifespan: "1940 – Present",
+    field: "Particle Physics",
+    fieldIcon: "atom",
+    fact: "A major contributor to three key discoveries in particle physics: the J/psi particle (proving the existence of the charm quark), the gluon (the carrier of the strong nuclear force), and the Higgs Boson at CERN in 2012, which explains why particles have mass.",
+    quote: "I want to discover something that is fundamental to the universe.",
+    tags: ["physics", "cern", "higgs boson", "quark", "gluon", "particle physics", "sau lan", "wu"],
+    wikipedia: "https://en.wikipedia.org/wiki/Sau_Lan_Wu"
+  },
+  {
+    id: "ruzena-bajcsy",
+    name: "Ružena Bajcsy",
+    lifespan: "1933 – Present",
+    field: "Robotics & AI",
+    fieldIcon: "code",
+    fact: "A pioneer in computer vision and robotics, she introduced the concept of 'active perception'—writing algorithms that let robotic cameras and sensors actively move to get a better look at their surroundings, rather than just passively processing static images.",
+    quote: "Computer science is not about computers, it is about solving problems.",
+    tags: ["robotics", "ai", "computer vision", "artificial intelligence", "active perception", "ruzena", "bajcsy", "programming"],
+    wikipedia: "https://en.wikipedia.org/wiki/Ru%C5%BEena_Bajcsy"
+  },
+  {
+    id: "sylvia-earle",
+    name: "Sylvia Earle",
+    lifespan: "1935 – Present",
+    field: "Marine Biology & Oceanography",
+    fieldIcon: "dna",
+    fact: "Known as 'Her Deepness', she has spent over 7,000 hours underwater. In 1979, she set the record for the deepest untethered ocean walk, descending 1,250 feet to the sea floor off Oahu in a pressurized JIM suit. She was the first female chief scientist of NOAA.",
+    quote: "No water, no life. No blue, no green.",
+    tags: ["ocean", "marine biology", "diving", "sylvia", "earle", "conservation", "noaa", "deep sea"],
+    wikipedia: "https://en.wikipedia.org/wiki/Sylvia_Earle"
+  },
+  {
+    id: "rita-levi-montalcini",
+    name: "Rita Levi-Montalcini",
+    lifespan: "1909 – 2012",
+    field: "Neurobiology",
+    fieldIcon: "dna",
+    fact: "During WWII, as a Jewish scientist banned from academic research by Mussolini's racial laws, she built a secret laboratory in her bedroom. Using eggs and micro-needles, she discovered Nerve Growth Factor (NGF), which guides the development of nerve cells. She won the Nobel Prize in 1986.",
+    quote: "Above all, don't fear difficult moments. The best comes from them.",
+    tags: ["biology", "neuroscience", "ngf", "secret lab", "italy", "nobel", "rita", "levi-montalcini", "nerves"],
+    wikipedia: "https://en.wikipedia.org/wiki/Rita_Levi-Montalcini"
+  },
+  {
+    id: "christiane-nusslein-volhard",
+    name: "Christiane Nüsslein-Volhard",
+    lifespan: "1942 – Present",
+    field: "Developmental Genetics",
+    fieldIcon: "dna",
+    fact: "She pioneered research into the genetic controls of embryonic development in fruit flies. Her systematic screens identified the exact maternal and zygotic genes responsible for shaping the body plan of an embryo, earning her the Nobel Prize in Medicine in 1995.",
+    quote: "You must be very curious and have a lot of stamina to succeed in science.",
+    tags: ["genetics", "embryology", "biology", "fruit flies", "nobel", "christiane", "nusslein-volhard", "development"],
+    wikipedia: "https://en.wikipedia.org/wiki/Christiane_N%C3%BCsslein-Volhard"
+  },
+  {
+    id: "maria-goeppert-mayer",
+    name: "Maria Goeppert Mayer",
+    lifespan: "1906 – 1972",
+    field: "Mathematical Physics",
+    fieldIcon: "math",
+    fact: "She proposed the nuclear shell model of the atomic nucleus, demonstrating why certain numbers of nucleons (now called 'magic numbers') resulted in highly stable configurations. She won the Nobel Prize in Physics in 1963, though she worked for many years in unpaid academic positions because of nepotism rules.",
+    quote: "Winning the prize wasn't half as exciting as doing the work itself.",
+    tags: ["physics", "nuclear", "magic numbers", "nobel", "maria", "goeppert", "mayer", "atoms"],
+    wikipedia: "https://en.wikipedia.org/wiki/Maria_Goeppert-Mayer"
+  },
+  {
+    id: "irene-joliot-curie",
+    name: "Irène Joliot-Curie",
+    lifespan: "1897 – 1956",
+    field: "Radiochemistry",
+    fieldIcon: "atom",
+    fact: "The daughter of Marie Curie, she won the 1935 Nobel Prize in Chemistry for co-discovering artificial radioactivity. By bombarding stable elements with alpha particles, she successfully synthesized brand-new radioactive isotopes, laying the foundation for modern nuclear medicine.",
+    quote: "The progress of science is a collective work.",
+    tags: ["chemistry", "radioactivity", "isotopes", "nobel", "irene", "joliot-curie", "medicine"],
+    wikipedia: "https://en.wikipedia.org/wiki/Ir%C3%A8ne_Joliot-Curie"
+  },
+  {
+    id: "frances-arnold",
+    name: "Frances Arnold",
+    lifespan: "1956 – Present",
+    field: "Chemical Engineering",
+    fieldIcon: "atom",
+    fact: "She pioneered 'directed evolution'—a method to breed enzymes in a test tube by introducing mutations and selecting the most effective variants. This biochemical engineering method is now used globally to manufacture eco-friendly biofuels, pharmaceuticals, and chemicals.",
+    quote: "I wanted to rewrite the code of life.",
+    tags: ["chemistry", "enzymes", "evolution", "nobel", "frances", "arnold", "biofuels", "engineering"],
+    wikipedia: "https://en.wikipedia.org/wiki/Frances_Arnold"
+  },
+  {
+    id: "donna-strickland",
+    name: "Donna Strickland",
+    lifespan: "1959 – Present",
+    field: "Optical Physics",
+    fieldIcon: "atom",
+    fact: "She co-invented Chirped Pulse Amplification (CPA), which stretches, amplifies, and recompresses laser pulses to create ultra-short, extremely high-intensity beams. This technology won her the Nobel Prize in Physics and enabled millions of laser eye surgeries (LASIK) and precision industrial drilling.",
+    quote: "We need to celebrate women scientists because we are out there.",
+    tags: ["physics", "lasers", "cpa", "nobel", "donna", "strickland", "optics", "lasik"],
+    wikipedia: "https://en.wikipedia.org/wiki/Donna_Strickland"
+  },
+  {
+    id: "andrea-ghez",
+    name: "Andrea Ghez",
+    lifespan: "1965 – Present",
+    field: "Astrophysics & Astronomy",
+    fieldIcon: "rocket",
+    fact: "Using advanced adaptive optics to correct for atmospheric distortion, she monitored stellar orbits around the center of our Milky Way. Her research proved the presence of a supermassive compact object—which we now know is a supermassive black hole named Sagittarius A*—winning her the 2020 Nobel Prize in Physics.",
+    quote: "The universe is full of mysteries, and we are lucky to be able to study them.",
+    tags: ["astrophysics", "black hole", "milky way", "sagittarius", "andrea", "ghez", "nobel", "stars"],
+    wikipedia: "https://en.wikipedia.org/wiki/Andrea_M._Ghez"
+  },
+  {
+    id: "emmanuelle-charpentier",
+    name: "Emmanuelle Charpentier",
+    lifespan: "1968 – Present",
+    field: "Microbiology & Genetics",
+    fieldIcon: "dna",
+    fact: "She discovered the mechanisms of CRISPR-Cas9, a molecular defense system used by bacteria to fight off viruses. Partnering with Jennifer Doudna, they converted this natural pathway into an easy-to-use gene editing tool that can modify the DNA of any living organism with surgical precision.",
+    quote: "Only a few times in a lifetime do you get to make a discovery that changes the world.",
+    tags: ["genetics", "crispr", "dna", "biology", "nobel", "emmanuelle", "charpentier", "editing"],
+    wikipedia: "https://en.wikipedia.org/wiki/Emmanuelle_Charpentier"
+  },
+  {
+    id: "jennifer-doudna",
+    name: "Jennifer Doudna",
+    lifespan: "1964 – Present",
+    field: "Biochemistry & Genetics",
+    fieldIcon: "dna",
+    fact: "She co-invented the CRISPR-Cas9 genetic scissors, which won her the 2020 Nobel Prize in Chemistry alongside Emmanuelle Charpentier. This technology is revolutionizing biology, offering potential cures for genetic disorders like sickle-cell anemia and allowing the development of climate-resilient crops.",
+    quote: "The power to control our species' genetic future is awesome and terrifying.",
+    tags: ["genetics", "crispr", "dna", "nobel", "jennifer", "doudna", "biochemistry", "editing"],
+    wikipedia: "https://en.wikipedia.org/wiki/Jennifer_Doudna"
+  },
+  {
+    id: "carolyn-bertozzi",
+    name: "Carolyn Bertozzi",
+    lifespan: "1966 – Present",
+    field: "Bioorthogonal Chemistry",
+    fieldIcon: "atom",
+    fact: "She founded the field of 'bioorthogonal chemistry', developing chemical reactions that can occur inside living cells without interfering with the organism's natural biochemistry. This allowed scientists to map biomolecules on cells and target cancer immunotherapies, winning her the 2022 Nobel Prize.",
+    quote: "I wanted to do chemistry inside living systems without hurting them.",
+    tags: ["chemistry", "bioorthogonal", "cancer", "cells", "nobel", "carolyn", "bertozzi", "biology"],
+    wikipedia: "https://en.wikipedia.org/wiki/Carolyn_R._Bertozzi"
+  },
+  {
+    id: "katalin-kariko",
+    name: "Katalin Karikó",
+    lifespan: "1958 – Present",
+    field: "Biochemistry",
+    fieldIcon: "dna",
+    fact: "She spent decades working on synthetic mRNA, overcoming persistent skepticism, research funding rejections, and demotions. Her crucial discovery of how to modify mRNA to avoid inflammatory reactions laid the direct scientific foundation for the incredibly fast development of the Pfizer-BioNTech and Moderna COVID-19 vaccines.",
+    quote: "If you don't enjoy the work, you shouldn't do it. But if you do, nothing else matters.",
+    tags: ["mrna", "vaccines", "covid", "biochemistry", "nobel", "katalin", "kariko", "immunity"],
+    wikipedia: "https://en.wikipedia.org/wiki/Katalin_Karik%C3%B3"
+  },
+  {
+    id: "anne-lhuillier",
+    name: "Anne L'Huillier",
+    lifespan: "1958 – Present",
+    field: "Attosecond Physics",
+    fieldIcon: "atom",
+    fact: "She discovered that when laser light passes through a noble gas, it creates high-frequency overtones. This research led to generating laser pulses that last only attoseconds (one quintillionth of a second)—pulses short enough to capture snapshots of electron dynamics inside atoms.",
+    quote: "This is the most fundamental part of physics: how electrons move.",
+    tags: ["physics", "attosecond", "laser", "electrons", "nobel", "anne", "lhuillier", "optics"],
+    wikipedia: "https://en.wikipedia.org/wiki/Anne_L%27Huillier"
+  }
+];
