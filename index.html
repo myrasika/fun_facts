@@ -24,29 +24,14 @@
       <p class="app-subtitle">Echoes of Women in Science, Tech, Engineering & Math</p>
     </header>
 
-    <!-- Interactive Prompt and search interface -->
+    <!-- Next fact button -->
     <section class="prompt-section">
-      <form class="prompt-form" id="search-form" autocomplete="off">
-        <div class="input-container">
-          <svg class="prompt-icon" viewBox="0 0 24 24" id="icon-search-svg">
-            <use href="#icon-search"></use>
-          </svg>
-          <input type="text" id="prompt-input" class="prompt-input"
-            placeholder="Ask about a field, scientist, or invention... (e.g., 'Space', 'Lovelace', 'Wi-Fi')"
-            aria-label="Fact search query input">
-          <button type="submit" id="prompt-submit" class="prompt-btn">
-            <span>Prompt</span>
-            <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24">
-              <use href="#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-      </form>
-
-      <!-- Interactive quick tag suggestions -->
-      <div class="tags-container" id="suggested-tags" aria-label="Suggested search categories">
-        <button type="button" class="tag-pill active" data-tag="random">🎲 Get Next STEM Fact</button>
-      </div>
+      <button type="button" id="next-fact-btn" class="prompt-btn">
+        <span>🎲 Get Next STEM Fact</span>
+        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24">
+          <use href="#icon-arrow-right"></use>
+        </svg>
+      </button>
     </section>
 
     <!-- Main Fact Display Card wrapper (3D perspective context) -->
@@ -182,11 +167,6 @@
     </g>
   </svg>
 
-  <!-- Load script resources -->
-  <!-- GSAP Core Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <!-- GSAP TextPlugin (for typing effects) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <!-- Facts data database module -->
   <script src="facts.js"></script>
   <!-- Main application logic script -->
