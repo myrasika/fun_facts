@@ -1,176 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEMinism Aura | Women in STEM Interactive Fun Facts</title>
-  <meta name="description"
-    content="Discover inspiring facts and quotes from pioneering women in science, technology, engineering, and mathematics. Prompt the engine to search historical records.">
+  <title>STEMinism | Women in STEM Facts</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- Particle and wave interactive background canvas -->
-  <canvas id="particle-canvas"></canvas>
+  <!-- Top-right pill -->
+  <a class="build-pill" href="#" target="_blank" rel="noopener noreferrer">Build yours here</a>
 
-  <!-- Main interactive interface container -->
-  <div class="app-container">
+  <!-- Title -->
+  <h1 class="app-title">STEMINISM</h1>
 
-    <!-- Title and tagline -->
-    <header>
-      <h1 class="app-title" id="title-glow">STEMinism Facts</h1>
-      <p class="app-subtitle">Echoes of Women in Science, Tech, Engineering & Math</p>
-    </header>
-
-    <!-- Next fact button -->
-    <section class="prompt-section">
-      <button type="button" id="next-fact-btn" class="prompt-btn">
-        <span> Get your Facts <br>Women in STEM </span>
-        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24">
-          
-        </svg>
-      </button>
-    </section>
-
-    <!-- Main Fact Display Card wrapper (3D perspective context) -->
-    <main class="card-wrapper">
-      <article class="fact-card" id="fact-card">
-
-        <!-- Large low-opacity quote decoration -->
-        <span class="bg-quote">“</span>
-
-        <!-- Card Header Info -->
-        <div class="card-top">
-          <span class="category-badge computer-science" id="card-category">
-            <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24" id="card-category-icon">
-              <use href="#icon-code"></use>
-            </svg>
-            <span id="card-category-text">Computer Science</span>
-          </span>
-          <span class="lifespan-tag" id="card-lifespan">1815 – 1852</span>
-        </div>
-
-        <!-- Scientist Name & Bio Subtitle -->
-        <div class="scientist-info">
-          <h2 class="scientist-name" id="card-name">Ada Lovelace</h2>
-          <p class="scientist-bio" id="card-bio">First computer programmer in history</p>
-        </div>
-
-        <!-- Central Fact and Quotation Block -->
-        <div class="card-body">
-          <p class="fact-text" id="card-fact">
-            She wrote the world's first computer algorithm for Charles Babbage's mechanical computer, the Analytical
-            Engine. Crucially, she was the first to realize that computers could do more than just compute
-            numbers—foreseeing that they could create music, art, and complex graphics if programmed correctly.
-          </p>
-          <div class="quote-container" id="card-quote-container">
-            <blockquote class="quote-text" id="card-quote">
-              "That brain of mine is something more than merely mortal; as time will show."
-            </blockquote>
-          </div>
-        </div>
-
-        <!-- Card bottom link section -->
-        <div class="card-bottom">
-          <a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank" rel="noopener noreferrer"
-            class="wiki-btn" id="card-wiki-link">
-            <span>Learn More</span>
-            <svg class="wiki-icon" viewBox="0 0 24 24">
-              <use href="#icon-external-link"></use>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Dynamic inline field illustration (abstract background art) -->
-        <div class="field-illustration" id="field-ill-container">
-          <!-- Dynamically loaded SVG element -->
-        </div>
-
-        <!-- Decryption Scanning Transition Screen overlay -->
-        <div class="scan-overlay" id="scan-screen">
-          <div class="spinner-outer">
-            <div class="spinner-ring spinner-ring-1"></div>
-            <div class="spinner-ring spinner-ring-2"></div>
-            <div class="spinner-ring spinner-ring-3"></div>
-          </div>
-          <div class="scan-text">Retrieving Record</div>
-          <div class="scan-subtext" id="scan-details">Interpreting quantum field parameters...</div>
-        </div>
-
-      </article>
-    </main>
-
-    <!-- Footer notes -->
-    <footer>
-      <p>Made with curiosity and pride. View historical references on <a href="https://en.wikipedia.org" target="_blank"
-          rel="noopener noreferrer">Wikipedia</a>.</p>
-    </footer>
-
+  <!-- Chalkboard -->
+  <div class="chalkboard-wrapper">
+    <div class="chalkboard" id="chalkboard">
+      <div class="chalk-content" id="chalk-content">
+        <p class="chalk-category" id="chalk-category">Computer Science</p>
+        <h2 class="chalk-name" id="chalk-name">Ada Lovelace</h2>
+        <p class="chalk-lifespan" id="chalk-lifespan">1815 – 1852</p>
+        <p class="chalk-fact" id="chalk-fact">She wrote the world's first computer algorithm for Charles Babbage's Analytical Engine — foreseeing that computers could create music, art, and graphics.</p>
+        <p class="chalk-quote" id="chalk-quote">"That brain of mine is something more than merely mortal; as time will show."</p>
+      </div>
+    </div>
+    <button class="next-btn" id="next-fact-btn">Next Fact →</button>
   </div>
 
-  <!-- Reusable SVG vector symbol templates -->
-  <svg style="display: none;">
-    <!-- Icon Search -->
-    <g id="icon-search">
-      <path
-        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-        fill="currentColor" />
-    </g>
-    <!-- Icon Arrow Right -->
-    <g id="icon-arrow-right">
-      <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor" />
-    </g>
-    <!-- Icon External Link -->
-    <g id="icon-external-link">
-      <path
-        d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-        fill="currentColor" />
-    </g>
+  <!-- Illustration strip (bottom portion of bckg.png via CSS background) -->
+  <div class="illustration-strip"></div>
 
-    <!-- Field Category Icons -->
-    <!-- Computer Science -->
-    <g id="icon-code">
-      <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
-        fill="currentColor" />
-    </g>
-    <!-- Physics -->
-    <g id="icon-atom">
-      <path
-        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
-        fill="currentColor" />
-    </g>
-    <!-- Chemistry / Pharmacy -->
-    <g id="icon-beaker">
-      <path
-        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 15H5v-2h5v2zm0-4H5v-2h5v2zm0-4H5V8h5v2zm9 8h-7v-2h7v2zm0-4h-7v-2h7v2zm0-4h-7V8h7v2z"
-        fill="currentColor" />
-    </g>
-    <!-- Mathematics -->
-    <g id="icon-math">
-      <path
-        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-        fill="currentColor" />
-    </g>
-    <!-- Space / Flight -->
-    <g id="icon-rocket">
-      <path
-        d="M12 2s3 4 3 7c0 3.31-2.69 6-6 6H7v2h2c4.97 0 9-4.03 9-9 0-3-3-6-3-6zm-4 7c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zm-5 8c0 1.66 1.34 3 3 3h2v-2H6c-1.66 0-3-1.34-3-3v-2H1v2c0 1.1.9 2 2 2z"
-        fill="currentColor" />
-    </g>
-    <!-- Biology / Medicine -->
-    <g id="icon-dna">
-      <path
-        d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-1.46-1.8-2.35-4.11-2.35-6.62C2 6.27 6.77 1.5 12.5 1.5S23 6.27 23 12.78c0 2.51-.89 4.82-2.35 6.62l-1.62-1.79C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9zm-1.5 4.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5S12.83 9 12 9s-1.5-.67-1.5-1.5zm1.5 4.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"
-        fill="currentColor" />
-    </g>
-  </svg>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-pills">
+      <a class="footer-pill" href="#" target="_blank" rel="noopener noreferrer">About Steminism</a>
+      <a class="footer-pill" href="https://buymeacoffee.com" target="_blank" rel="noopener noreferrer">Buy me a Coffee</a>
+    </div>
+    <span class="footer-credit">Made with curiosity and pride by Myra Sika.</span>
+  </footer>
 
-  <!-- Facts data database module -->
   <script src="facts.js"></script>
-  <!-- Main application logic script -->
   <script src="app.js"></script>
 </body>
-
 </html>
