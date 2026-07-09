@@ -14,10 +14,62 @@
   <!-- Title -->
   <h1 class="app-title">STEMINISM</h1>
 
-  <!-- Chalkboard -->
-  <div class="chalkboard-wrapper">
-    <div class="chalkboard" id="chalkboard">
-      <div class="chalk-content" id="chalk-content">
+  <!-- Chalkboard wrapper: position:relative so buttons can anchor to it -->
+  <div class="chalkboard-wrapper" style="position:relative; width:100%; margin-top:-1rem;">
+
+    <!-- Left arrow button -->
+    <button id="btn-prev" style="
+      position:absolute; left:6%; top:50%; 
+      transform:translateY(-50%);
+      z-index:10; background:rgba(0,0,0,0.45); 
+      border:2px solid rgba(255,255,255,0.6);
+      border-radius:50%; 
+      width:3rem; height:3rem; 
+      font-size:1.4rem; color:#fff;
+      cursor:pointer; display:flex; 
+      align-items:center; 
+      justify-content:center;
+      line-height:1;">&#8592;</button>
+
+    <!-- Right arrow button -->
+    <button id="btn-next" style="
+      position:absolute; right:7%; top:50%; 
+      transform:translateY(-50%);
+      z-index:10; background:rgba(0,0,0,0.45); 
+      border:2px solid rgba(255,255,255,0.6);
+      border-radius:50%; 
+      width:3rem; height:3rem; 
+      font-size:1.4rem; color:#fff;
+      cursor:pointer; display:flex; 
+      align-items:center; 
+      justify-content:center;
+      line-height:1;">&#8594;</button>
+
+    <!-- Chalkboard: overflow:hidden to crop SVG -->
+    <div id="chalkboard" style="
+      position:relative; width:100%;
+      aspect-ratio: 5637 / 2518;
+      overflow:hidden; cursor:default;">
+
+      <!-- SVG blackboard image -->
+      <img
+        src="images/Steminism blackboard.svg"
+        alt=""
+        aria-hidden="true"
+        style="
+          position:absolute; top:0; left:0;
+          width:141.8%; height:auto;
+          left:-22.7%; top:-36.3%;
+          display:block; pointer-events:none; z-index:0;"
+      >
+
+      <!-- Chalk text centered on the board -->
+      <div class="chalk-content" id="chalk-content" style="
+        position:absolute; inset:0; z-index:1;
+        display:flex; flex-direction:column;
+        align-items:center; justify-content:center;
+        padding:4% 12%; text-align:center;
+        pointer-events:none;">
         <p class="chalk-category" id="chalk-category">Computer Science</p>
         <h2 class="chalk-name" id="chalk-name">Ada Lovelace</h2>
         <p class="chalk-lifespan" id="chalk-lifespan">1815 – 1852</p>
@@ -25,11 +77,12 @@
         <p class="chalk-quote" id="chalk-quote">"That brain of mine is something more than merely mortal; as time will show."</p>
       </div>
     </div>
-    <button class="next-btn" id="next-fact-btn">Next Fact →</button>
   </div>
 
-  <!-- Illustration strip (bottom portion of bckg.png via CSS background) -->
-  <div class="illustration-strip"></div>
+  <!-- bckg.png illustration -->
+  <div style="width:100%; overflow:hidden; margin-top:-43%;">
+    <img src="images/bckg.png" alt="Women in STEM illustration" style="width:100%; display:block;">
+  </div>
 
   <!-- Footer -->
   <footer>
