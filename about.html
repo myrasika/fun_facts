@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | STEMinism</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Title -->
+  <h1 class="app-title">STEMINISM</h1>
+
+  <!-- Chalkboard wrapper: position:relative so content can anchor to it -->
+  <div class="chalkboard-wrapper" style="position:relative; width:85%; margin-top:-1rem;">
+
+    <!-- Chalkboard: overflow:hidden to crop SVG -->
+    <div id="chalkboard" style="
+      position:relative; width:100%;
+      aspect-ratio: 5637 / 2518;
+      overflow:hidden; cursor:default;">
+
+      <!-- SVG blackboard image -->
+      <img
+        src="images/Steminism blackboard.svg"
+        alt=""
+        aria-hidden="true"
+        style="
+          position:absolute; top:0; left:0;
+          width:141.8%; height:auto;
+          left:-22.7%; top:-36.3%;
+          display:block; pointer-events:none; z-index:0;"
+      >
+
+      <!-- Chalk text centered on the board -->
+      <div class="chalk-content" id="chalk-content" style="
+        position:absolute; inset:0; z-index:1;
+        display:flex; flex-direction:column;
+        align-items:center; justify-content:center;
+        padding:4% 12%; text-align:center;
+        pointer-events:none;">
+        <p class="chalk-category">About</p>
+        <h2 class="chalk-name">STEMinism</h2>
+        <p class="chalk-lifespan">Celebrating Women in STEM</p>
+        <p class="chalk-fact">Women have always been part of STEM. They've made discoveries, solved complex problems, built groundbreaking technologies, and pushed science forward—yet many of their stories aren't as widely known as they should be.
+            This website is dedicated to celebrating those women and the impact they've had across science, technology, engineering, and mathematics. Each profile highlights their achievements, the challenges they overcame, and the legacy they've left behind.
+            Whether you're here to learn, find inspiration, or simply discover someone new, I hope these stories remind you that innovation has always been shaped by women—and will continue to be..</p>
+        <p class="chalk-quote">"Curiosity opens the door to discovery. Representation makes sure everyone knows they're invited."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- bckg.png illustration -->
+  <div style="width:100%; overflow:hidden; margin-top:-43%;">
+    <img src="images/bckg.png" alt="Women in STEM illustration" style="width:106%; display:block; margin-left:-2.5%;">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-credit">Made with curiosity and pride by Myra Sika.</span>
+  </footer>
+
+</body>
+</html>
