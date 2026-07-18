@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Special+Elite&family=Londrina+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .londrina-outline-regular {
   font-family: "Londrina Outline", sans-serif;
@@ -14,7 +14,7 @@
 
 body {
   background: #ffffff;
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ body {
   background: #c8f06e;
   border-radius: 999px;
   padding: 0.6rem 1.5rem;
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: 1.15rem;
   color: #222;
   text-decoration: none;
@@ -79,7 +79,7 @@ body {
 }
 
 .chalk-category {
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   color: rgba(255,255,255,0.5);
   letter-spacing: 0.2em;
@@ -99,14 +99,14 @@ body {
 }
 
 .chalk-lifespan {
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: rgba(255,255,255,0.45);
   margin-bottom: 1rem;
 }
 
 .chalk-fact {
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.3rem);
   color: rgba(255, 255, 255, 0.82);
   line-height: 1.55;
@@ -116,7 +116,7 @@ body {
 }
 
 .chalk-quote {
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: clamp(0.85rem, 1.6vw, 1.1rem);
   color: rgba(255, 255, 255, 0.5);
   font-style: italic;
@@ -154,7 +154,7 @@ footer {
   background: #c8f06e;
   border-radius: 999px;
   padding: 0.55rem 1.5rem;
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: 1.15rem;
   color: #222;
   text-decoration: none;
@@ -162,7 +162,7 @@ footer {
 }
 
 .footer-credit {
-  font-family: 'Caveat', cursive;
+  font-family: 'Quantico', sans-serif;
   font-size: 0.95rem;
   color: #444;
   font-style: italic;
