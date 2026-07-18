@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&family=Londrina+Outline&display=swap');
 
 .londrina-outline-regular {
   font-family: "Londrina Outline", sans-serif;
@@ -14,7 +14,7 @@
 
 body {
   background: #ffffff;
-  font-family: 'Quantico', sans-serif;
+  font-family: 'Caveat', cursive;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
